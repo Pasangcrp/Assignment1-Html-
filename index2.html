@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to My Webpage</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Main Content</h2>
+        <p>
+          This is the main content of the webpage. You can add more sections,
+          articles, or any other content here.
+        </p>
+      </section>
+      <aside>
+        <h2>Sidebar</h2>
+        <p>
+          This is the sidebar content. You can add additional information or
+          links here.
+        </p>
+      </aside>
+    </main>
+    <footer>
+      <p>&copy; 2022 My Webpage. All rights reserved.</p>
+    </footer>
+
+    <!-- Question 1 -->
+    <div>
+      <h1>Heading1 (h1)</h1>
+      <p>Paragraph (p): This is a simple Paragraph</p>
+      <ul>
+        <li>Unordered List item1</li>
+        <li>Unordered List item2</li>
+        <li>Unordered List item3</li>
+      </ul>
+      <ol>
+        <li>Ordered List item1</li>
+        <li>Ordered List item2</li>
+        <li>Ordered List item3</li>
+      </ol>
+
+      <p>Another paragraph (p) with some <b>bold</b> and <i>italic</i> text</p>
+
+      <dl>
+        <dt>Definition Term1</dt>
+        <dd>Definition data1</dd>
+      </dl>
+      <dl>
+        <dt>Definition Term2</dt>
+        <dd>Definition data2</dd>
+      </dl>
+    </div>
+    <section class="code-example">
+      <h2>Colored section</h2>
+      <p>This section has a background color</p>
+    </section>
+
+    <!-- Question 2 -->
+    <div>
+      <h1>Employee Information</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Position</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>Software Developer</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jane Smith</td>
+            <td>UX designer</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Mark Johnson</td>
+            <td>Project Manager</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="form-div">
+      <form action="#">
+        <h1>Contact Us</h1>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Your name" />
+        <label for="email">Email:</label>
+        <input type="text" id="email" placeholder="Email" />
+        <label for="message">Message:</label>
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        <button type="button">Submit</button>
+      </form>
+    </div>
+
+    <!-- Media and Canvas Example -->
+    <audio controls>
+      <source src="example_audio.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <br /><br />
+
+    <video width="400" height="300" controls>
+      <source src="example_video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <br /><br />
+
+    <canvas
+      id="myCanvas"
+      width="400"
+      height="200"
+      style="border: 1px solid #000"
+    ></canvas>
+
+    <script>
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+
+      ctx.fillStyle = "red";
+      ctx.fillRect(50, 50, 200, 100);
+
+      ctx.beginPath();
+      ctx.arc(300, 100, 50, 0, 2 * Math.PI);
+      ctx.fillStyle = "blue";
+      ctx.fill();
+    </script>
+
+    <!-- HTML Events Example -->
+    <form id="myForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" required />
+      <button type="submit">Submit</button>
+    </form>
+
+    <input type="text" id="textInput" onkeyup="displayText()" />
+    <p id="displayText"></p>
+
+    <button
+      id="mouseButton"
+      onmouseover="highlightButton()"
+      onmouseout="unhighlightButton()"
+    >
+      Hover over me
+    </button>
+
+    <p id="windowEvent"></p>
+
+    <script>
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          alert("Form submitted!");
+        });
+
+      function displayText() {
+        var inputText = document.getElementById("textInput").value;
+        document.getElementById("displayText").innerText = inputText;
+      }
+
+      function highlightButton() {
+        document.getElementById("mouseButton").classList.add("highlight");
+      }
+
+      function unhighlightButton() {
+        document.getElementById("mouseButton").classList.remove("highlight");
+      }
+
+      window.addEventListener("resize", function () {
+        document.getElementById("windowEvent").innerText = "Window resized!";
+      });
+
+      window.addEventListener("load", function () {
+        document.getElementById("windowEvent").innerText = "Window loaded!";
+      });
+    </script>
+  </body>
+</html>
